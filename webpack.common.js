@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
   entry: './src/js/index.js',
@@ -20,7 +21,7 @@ const config = {
       {
         test: /\.(scss|css)$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'sass-loader'
@@ -52,6 +53,9 @@ const config = {
         from: path.resolve(__dirname, "src", "img"),
         to: path.resolve(__dirname, "dist", "img")
       }]
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
     }),
   ]
 };
