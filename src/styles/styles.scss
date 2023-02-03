@@ -1,7 +1,4 @@
-$font-size: 1rem;
-$font-color: lch(53 105 40);
-
-html {
-  font-size: $font-size;
-  color: $font-color;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }

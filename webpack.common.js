@@ -1,13 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
   entry: './src/js/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    clean: true
   },
   module: {
     rules: [
@@ -43,10 +44,15 @@ const config = {
     ]
   },
   plugins: [
-    new CopyPlugin({
-      patterns: [{ from: './src/index.html' }],
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
     }),
-    new CleanWebpackPlugin()
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: path.resolve(__dirname, "src", "img"),
+        to: path.resolve(__dirname, "dist", "img")
+      }]
+    }),
   ]
 };
 
