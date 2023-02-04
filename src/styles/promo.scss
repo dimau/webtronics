@@ -1,0 +1,75 @@
+@import "./index";
+
+.promo {
+  background-image: url("../img/promo/bg.png");
+  @include background-image-helper();
+  height: 100vh;
+}
+
+.promo_inner {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo__content-block {
+  height: 400px;
+  width: 1200px;
+  position: relative;
+}
+
+.promo__header {
+  @include text-header();
+  font-size: 150px;
+}
+
+.promo__header-span1,
+.promo__header-span2,
+.promo__header-span3 {
+  display: block;
+}
+
+.promo__header-span2 {
+  padding-left: 312px;
+}
+
+.promo__header-span3 {
+  font-size: 32px;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.promo__subheader {
+  width: 360px;
+  position: absolute;
+  right: 0;
+  top: 110px;
+  transform: translateY(-50%);
+}
+
+.promo__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 32px;
+  background: linear-gradient(180deg, #1FF2FF 0%, #27F9E5 52.66%, #2FFFCD 100%);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  /* Font */
+  @include text-normal();
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  color: $color-primary-100;
+
+  /* Position */
+  position: absolute;
+  top: calc(180px + 90px);
+  left: 0;
+  transform: translateY(-50%);
+}

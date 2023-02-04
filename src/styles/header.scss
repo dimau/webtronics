@@ -1,3 +1,26 @@
+@import "./index";
+
 .header {
-  background-color: yellow;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 48px;
+}
+
+.nav__link {
+  color: $font-color-white;
+  text-decoration: none;
 }
