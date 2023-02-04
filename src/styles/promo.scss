@@ -4,6 +4,17 @@
   background-image: url("../img/promo/bg.png");
   @include background-image-helper();
   height: 100vh;
+  position: relative;
+}
+
+.promo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 380px;
+  background-image: $color-linear-1;
+  z-index: 1;
 }
 
 .promo_inner {
@@ -12,6 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .promo__content-block {
@@ -21,7 +33,7 @@
 }
 
 .promo__header {
-  @include text-header();
+  @include text-header(1);
   font-size: 150px;
 }
 
@@ -55,7 +67,7 @@
   justify-content: center;
   align-items: center;
   padding: 24px 32px;
-  background: linear-gradient(180deg, #1FF2FF 0%, #27F9E5 52.66%, #2FFFCD 100%);
+  background: $color-linear-2;
   border-radius: 8px;
   border: none;
   cursor: pointer;

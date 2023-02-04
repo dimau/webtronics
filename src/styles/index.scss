@@ -24,9 +24,18 @@
   --base-unit: calc(1vh + 1vw);
 }
 
-$font-color-white: #fff;
+$color-gradient: linear-gradient(152.14deg, rgba(21, 191, 253, 0.7) 9.96%, rgba(156, 55, 253, 0.7) 100%);
+$color-linear-1: linear-gradient(180deg, rgba(12, 16, 45, 0) -4.71%, #0C102D 97.38%);
+$color-linear-2: linear-gradient(180deg, #1FF2FF 0%, #27F9E5 52.66%, #2FFFCD 100%);
+$color-linear-3: linear-gradient(90deg, rgba(21, 191, 253, 0) 8.03%, rgba(21, 191, 253, 0.7) 69.15%, rgba(156, 55, 253, 0.7) 97.95%);
+$color-clean: #fff;
+$color-primary-80: #3B48D0;
 $color-primary-100: #0A1482;
-$background-color-base: #0C102D;
+$color-error: #FD4646;
+$color-border: #636363;
+$color-text-40: #A2CBFB;
+$color-clean-5: rgba(255, 255, 255, 0.05);
+$color-bg: #0C102D;
 
 @mixin text-normal() {
   font-family: "Inter", sans-serif;
@@ -37,11 +46,19 @@ $background-color-base: #0C102D;
   color: #FFFFFF;
 }
 
-@mixin text-header() {
+@mixin text-header($h: 2) {
+  @if ($h == 1) {
+    font-size: 150px;
+  } @else if ($h == 2) {
+    font-size: 72px;
+  } @else if ($h == 3) {
+    font-size: 32px;
+  } @else {
+    font-size: 24px;
+  }
   font-family: "Clash Display", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 72px;
   line-height: 120%;
   color: #FFFFFF;
 }
@@ -130,7 +147,7 @@ select {
 /* Set default options */
 body {
   @include text-normal();
-  background-color: $background-color-base;
+  background-color: $color-bg;
 }
 
 .container {
