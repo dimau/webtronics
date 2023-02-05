@@ -1,0 +1,31 @@
+%text-normal {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+
+%background-image-helper {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin text-header($h: 2) {
+  @if ($h == 1) {
+    font-size: 150px;
+  } @else if ($h == 2) {
+    font-size: 72px;
+  } @else if ($h == 3) {
+    font-size: 32px;
+  } @else {
+    font-size: 24px;
+  }
+  font-family: "Clash Display", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  color: #FFFFFF;
+}
