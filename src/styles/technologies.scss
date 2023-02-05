@@ -2,6 +2,7 @@
 
 .technologies {
   margin-bottom: var(--margin-between-sections);
+  position: relative;
 
   &__inner{
     display: flex;
@@ -50,15 +51,15 @@
     z-index: -1;
   }
 
-  //&__item::before {
-  //  content: "";
-  //  position: absolute;
-  //  inset: 0;
-  //  border-radius: 16px;
-  //  padding: 1px;
-  //  background: $color-gradient;
-  //  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  //  -webkit-mask-composite: xor;
-  //  mask-composite: exclude;
-  //}
+  &::before {
+    @extend %background-sphere;
+    top: -250px;
+    right: -100px;
+  }
+
+  &::after {
+    @extend %background-sphere;
+    top: 360px;
+    left: 120px;
+  }
 }

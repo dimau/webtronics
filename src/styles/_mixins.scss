@@ -13,6 +13,16 @@
   background-size: cover;
 }
 
+%background-sphere {
+  content: "";
+  position: absolute;
+  width: 356px;
+  height: 356px;
+  background: #2A3E84;
+  filter: blur(175px);
+  z-index: -1;
+}
+
 @mixin text-header($h: 2) {
   @if ($h == 1) {
     font-size: 150px;
