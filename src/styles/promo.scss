@@ -34,6 +34,7 @@
   &__header {
     @include text-header(1);
     font-size: 150px;
+    text-align: left;
   }
 
   &__header-span1,

@@ -1,0 +1,64 @@
+@import "index";
+
+.technologies {
+  margin-bottom: var(--margin-between-sections);
+
+  &__inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__header {
+    @include text-header(2);
+    margin-bottom: 16px;
+    max-width: 550px;
+  }
+
+  &__subheader {
+    @extend %text-normal;
+    max-width: 550px;
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 25px 10px;
+    position: relative;
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 181px;
+    height: 230px;
+    background-image: url("../img/technologies/Subtract.svg");
+    @extend %background-image-helper;
+    z-index: -1;
+  }
+
+  //&__item::before {
+  //  content: "";
+  //  position: absolute;
+  //  inset: 0;
+  //  border-radius: 16px;
+  //  padding: 1px;
+  //  background: $color-gradient;
+  //  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  //  -webkit-mask-composite: xor;
+  //  mask-composite: exclude;
+  //}
+}

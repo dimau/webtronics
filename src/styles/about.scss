@@ -1,7 +1,7 @@
 @import "index";
 
 .about {
-  margin-bottom: 180px;
+  margin-bottom: var(--margin-between-sections);
 
   &__header {
     @include text-header(2);
