@@ -33,10 +33,22 @@
   } @else {
     font-size: 24px;
   }
+
   font-family: "Clash Display", sans-serif;
   font-style: normal;
-  font-weight: 600;
+
+  @if ($h == 4) {
+    font-weight: 500;
+  } @else {
+    font-weight: 600;
+  }
+
   line-height: 120%;
   color: #FFFFFF;
-  text-align: center;
+
+  @if ($h >= 3) {
+    text-align: left;
+  } @else {
+    text-align: center;
+  }
 }

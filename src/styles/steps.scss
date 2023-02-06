@@ -1,0 +1,111 @@
+@import "index";
+
+.steps {
+  margin-bottom: var(--margin-between-sections);
+  position: relative;
+
+  &__header {
+    @include text-header(2);
+    margin-bottom: 75px;
+  }
+
+  &__content {
+    display: flex;
+    gap: 266px;
+  }
+
+  &__left-part,
+  &__right-part {
+    display: flex;
+    flex-direction: column;
+    gap: 180px;
+    padding: 0;
+  }
+
+  &__left-part {
+    justify-content: right;
+  }
+
+  &__right-part {
+    margin-top: 125px;
+    justify-content: left;
+  }
+
+}
+
+.step {
+  width: 475px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  padding: 24px;
+
+  /* Gradient border with border-radius */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    padding: 1px;
+    background: $color-gradient;
+    -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+
+  &__position {
+    @include text-header(4);
+  }
+
+  &__title {
+    @include text-header(3);
+  }
+
+  &__desc {
+
+  }
+}
+
+/* Decoration elements - connectors to the central trunc */
+.steps__left-part .step::after,
+.steps__right-part .step::after {
+  content: "";
+  width: 274px;
+  height: 228px;
+  position: absolute;
+  top: -18px;
+  @extend %background-image-helper;
+}
+
+.steps__left-part .step::after {
+  background-image: url("../img/steps/left-pointer.svg");
+  right: -144px;
+}
+
+.steps__right-part .step::after {
+  background-image: url("../img/steps/left-pointer.svg");
+  transform: rotateZ(180deg);
+  left: -144px;
+}
+
+/* Decoration element - central trunc */
+.steps::before {
+  content: "";
+  width: 4px;
+  height: 870px;
+  background-image: $color-linear-2;
+  position: absolute;
+  top: 263px;
+  left: 726px;
+}
+
+/* Decoration element - sphere */
+.steps::after {
+  @extend %background-sphere;
+  top: 450px;
+  left: 100px;
+}

@@ -54,7 +54,7 @@
   &::before {
     @extend %background-sphere;
     top: -250px;
-    right: -100px;
+    right: 0;
   }
 
   &::after {
