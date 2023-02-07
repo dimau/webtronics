@@ -1,0 +1,58 @@
+@import "index";
+
+.gallery {
+  margin-bottom: var(--margin-between-sections);
+  position: relative;
+
+  &__header {
+    @include text-header(2);
+    margin-bottom: 50px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-areas:
+            "intro img-2 img-3"
+            "img-1 img-2 img-4"
+            "img-1 final final";
+    grid-template-columns: 24% 1fr 24%;
+    grid-template-rows: auto auto auto;
+    gap: 25px 25px;
+  }
+
+  &__img {
+    border-radius: 16px;
+  }
+
+  &__intro {
+    grid-area: intro;
+    margin-top: 45px;
+  }
+
+  &__final {
+    grid-area: final;
+  }
+
+  &__img-1 {
+    grid-area: img-1;
+  }
+
+  &__img-2 {
+    grid-area: img-2;
+  }
+
+  &__img-3 {
+    grid-area: img-3;
+  }
+
+  &__img-4 {
+    grid-area: img-4;
+  }
+}
+
+/* Decoration element - sphere */
+.gallery::after {
+  @extend %background-sphere;
+  top: 450px;
+  left: 50px;
+}
