@@ -1,0 +1,91 @@
+@import "index";
+
+.faq {
+  margin-bottom: var(--margin-between-sections);
+  position: relative;
+
+  &__header {
+    @include text-header(2);
+    margin-bottom: 55px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+  }
+
+  &__left-side,
+  &__right-side {
+    flex-basis: 100%;
+  }
+
+  &__left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  &__desc {
+    align-self: flex-start;
+  }
+
+  &__question-mark {
+    filter: drop-shadow(0px 0px 46.8px #6B55D8) drop-shadow(0px 0px 23.4px #6B55D8);
+  }
+}
+
+// Accordion component adaptation
+.accordion {
+
+  &__item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 27px 70px 27px 27px;
+  }
+
+  // Gradient border with border radius
+  &__item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    padding: 1px;
+    background: $color-gradient;
+    -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+
+  &__header {
+    @include text-header(4);
+    background-color: transparent;
+    padding: 0;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &__header::after {
+    position: absolute;
+    top: 32px;
+    right: 20px;
+  }
+
+  &__content {
+    background-color: transparent;
+    color: $color-clean;
+    padding: 16px 0 0 0;
+  }
+}
+
+/* Decoration element - sphere */
+.faq::before {
+  @extend %background-sphere;
+  top: 150px;
+  right: 0;
+}
