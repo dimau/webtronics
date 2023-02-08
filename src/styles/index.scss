@@ -8,6 +8,10 @@
   --margin-between-sections: 180px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Set default options */
 body {
   @extend %text-normal;
