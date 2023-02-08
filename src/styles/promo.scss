@@ -62,23 +62,6 @@
   }
 
   &__button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 24px 32px;
-    background: $color-linear-2;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-
-    /* Font */
-    @extend %text-normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 120%;
-    color: $color-primary-100;
-
     /* Position */
     position: absolute;
     top: calc(180px + 90px);

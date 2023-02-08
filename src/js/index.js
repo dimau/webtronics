@@ -17,6 +17,7 @@ import "../styles/steps.scss";
 import "../styles/faq.scss";
 import "../styles/review.scss";
 import "../styles/gallery.scss";
+import "../styles/contact-us.scss";
 
 // Initialize accordion
 new Accordion(document.querySelector(".accordion"), {
