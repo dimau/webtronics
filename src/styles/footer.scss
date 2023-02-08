@@ -1,8 +1,8 @@
-@import "index";
+@use "vars";
 
 .footer {
   padding: 34px 0;
-  background: $color-clean-5;
+  background: vars.$color-clean-5;
   backdrop-filter: blur(5px);
   position: relative;
 
@@ -12,10 +12,8 @@
     position: absolute;
     inset: 0;
     padding-top: 1px;
-    background-image: $color-gradient;
-    mask:
-            linear-gradient(#fff, #fff) content-box,
-            linear-gradient(#fff, #fff);
+    background-image: vars.$color-gradient;
+    mask: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff);
     mask-composite: exclude;
     pointer-events: none;
   }
@@ -58,7 +56,7 @@
 
   &__menu-link {
     text-decoration: none;
-    color: $color-clean;
+    color: vars.$color-clean;
   }
 
   &__social-header {

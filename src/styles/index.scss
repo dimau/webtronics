@@ -1,7 +1,7 @@
-@import "_reset";
-@import "_fonts";
-@import "_vars";
-@import "_mixins";
+@use "reset";
+@use "fonts";
+@use "vars";
+@use "mixins";
 
 :root {
   --base-unit: calc(1vh + 1vw);
@@ -15,7 +15,7 @@ html {
 /* Set default options */
 body {
   @extend %text-normal;
-  background-color: $color-bg;
+  background-color: vars.$color-bg;
 }
 
 .container {
@@ -35,7 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 24px 32px;
-  background: $color-linear-2;
+  background: vars.$color-linear-2;
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -45,14 +45,14 @@ body {
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
-  color: $color-primary-100;
+  color: vars.$color-primary-100;
 
   &:hover {
-    color: $color-primary-80;
+    color: vars.$color-primary-80;
   }
 
   &:active {
-    color: $color-clean;
+    color: vars.$color-clean;
   }
 }
 

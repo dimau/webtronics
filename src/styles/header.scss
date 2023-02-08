@@ -1,4 +1,4 @@
-@import "./index";
+@use "vars";
 
 .header {
   position: absolute;
@@ -21,6 +21,6 @@
 }
 
 .nav__link {
-  color: $color-clean;
+  color: vars.$color-clean;
   text-decoration: none;
 }

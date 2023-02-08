@@ -1,11 +1,12 @@
-@import "index";
+@use "vars";
+@use "mixins";
 
 .steps {
   margin-bottom: var(--margin-between-sections);
   position: relative;
 
   &__header {
-    @include text-header(2);
+    @include mixins.text-header(2);
     margin-bottom: 75px;
   }
 
@@ -48,21 +49,18 @@
     inset: 0;
     border-radius: 8px;
     padding: 1px;
-    background: $color-gradient;
-    -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
+    background: vars.$color-gradient;
+    mask: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff);
     mask-composite: exclude;
     z-index: -1;
   }
 
   &__position {
-    @include text-header(4);
+    @include mixins.text-header(4);
   }
 
   &__title {
-    @include text-header(3);
+    @include mixins.text-header(3);
   }
 
   &__desc {
@@ -97,7 +95,7 @@
   content: "";
   width: 4px;
   height: 870px;
-  background-image: $color-linear-2;
+  background-image: vars.$color-linear-2;
   position: absolute;
   top: 263px;
   left: 726px;

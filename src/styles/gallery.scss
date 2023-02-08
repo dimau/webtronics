@@ -1,11 +1,12 @@
-@import "index";
+@use "vars";
+@use "mixins";
 
 .gallery {
   margin-bottom: var(--margin-between-sections);
   position: relative;
 
   &__header {
-    @include text-header(2);
+    @include mixins.text-header(2);
     margin-bottom: 50px;
   }
 
@@ -22,7 +23,7 @@
 
   &__img {
     border-radius: 16px;
-    box-shadow: 0 0 5px $color-primary-light;
+    box-shadow: 0 0 5px vars.$color-primary-light;
   }
 
   &__intro {

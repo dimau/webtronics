@@ -1,4 +1,5 @@
-@import "index";
+@use "vars";
+@use "mixins";
 
 .technologies {
   margin-bottom: var(--margin-between-sections);
@@ -12,7 +13,7 @@
   }
 
   &__header {
-    @include text-header(2);
+    @include mixins.text-header(2);
     margin-bottom: 16px;
     max-width: 550px;
   }

@@ -1,10 +1,11 @@
-@import "index";
+@use "vars";
+@use "mixins";
 
 .review {
   margin-bottom: var(--margin-between-sections);
 
   &__header {
-    @include text-header(2);
+    @include mixins.text-header(2);
     margin-bottom: 50px;
   }
 
@@ -44,7 +45,7 @@
   }
 
   &__slide-title {
-    @include text-header(3);
+    @include mixins.text-header(3);
   }
 
   &__slide-desc {
