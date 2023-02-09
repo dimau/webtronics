@@ -1,5 +1,11 @@
 export class Accordion {
   constructor(target, config) {
+    // Если target элемент не передан, то нечего инициализировать
+    if (!target) {
+      console.warn("Accordion component is downloaded, but can't be applied");
+      return;
+    }
+
     // Получаем элемент DOM, который нужно проинициализировать как аккордеон
     this._el =
       typeof target === "string" ? document.querySelector(target) : target;

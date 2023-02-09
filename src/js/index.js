@@ -35,3 +35,10 @@ new Accordion(document.querySelector(".accordion"), {
 //     prevEl: ".swiper-button-prev",
 //   },
 // });
+
+// Initialize nav menu for mobile devices
+const menuBtn = document.querySelector(".nav__burger");
+const menuMobile = document.querySelector(".nav__list");
+menuBtn.addEventListener("click", () => {
+  menuMobile.classList.toggle("open");
+});

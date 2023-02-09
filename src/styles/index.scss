@@ -20,6 +20,7 @@ body {
 
 .container {
   max-width: 1220px;
+  height: 100%;
   padding-left: 10px;
   padding-right: 10px;
   margin: 0 auto;
@@ -53,6 +54,11 @@ body {
 
   &:active {
     color: vars.$color-clean;
+  }
+  
+  @media screen and (width <= 630px) {
+    font-size: 16px;
+    padding: 19px 26px;
   }
 }
 
