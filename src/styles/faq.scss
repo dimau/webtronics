@@ -7,7 +7,7 @@
 
   &__header {
     @include mixins.text-header(2);
-    margin-bottom: 55px;
+    margin-bottom: 60px;
   }
 
   &__content {
@@ -118,5 +118,11 @@
 @media screen and (width <= 630px){
   .faq__right-side {
     width: 100%;
+  }
+}
+
+@media screen and (width <= 450px){
+  .accordion__header::after {
+    top: 6vw;
   }
 }
