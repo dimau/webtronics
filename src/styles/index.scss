@@ -9,6 +9,7 @@
   --h1-font-size: 150px;
   --h2-font-size: 72px;
   --h3-font-size: 32px;
+  --h4-font-size: 24px;
 }
 
 @media screen and (width <= 1219px) {
@@ -29,6 +30,13 @@
     --margin-between-sections: 100px;
     --text-font-size: 14px;
     --h3-font-size: 5vw;
+    --h4-font-size: 4vw;
+  }
+}
+
+@media screen and (width <= 400px) {
+  :root {
+    --h4-font-size: 14px;
   }
 }
 

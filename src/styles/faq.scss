@@ -87,3 +87,36 @@
   top: 150px;
   right: 0;
 }
+
+// Adaptation for tablets
+@media screen and (width <= 1219px) {
+  .faq__left-side {
+    gap: 25px;
+  }
+
+  .faq__right-side {
+    width: 580px;
+  }
+
+  .faq__desc {
+    width: 100%;
+    text-align: center;
+  }
+
+  .faq__content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq__question-mark {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+// Adaptation for mobile
+@media screen and (width <= 630px){
+  .faq__right-side {
+    width: 100%;
+  }
+}
