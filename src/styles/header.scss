@@ -20,7 +20,6 @@
   &__logo-link {
     position: relative;
     z-index: 10;
-    padding: 0 5px;
   }
 }
 
@@ -92,11 +91,12 @@
   .nav__burger {
     display: flex;
     align-items: center;
-    width: 45px;
+    width: 35px;
     height: 30px;
     background-color: transparent;
     border: none;
     cursor: pointer;
+    padding: 0;
     position: relative;      // Нужно, чтобы z-index применился
     z-index: 10; // Кнопка должна оставаться выше всех остальных элементов на экране
   }

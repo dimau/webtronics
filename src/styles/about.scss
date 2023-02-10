@@ -112,3 +112,65 @@
     }
   }
 }
+
+// Adaptation for tabs
+@media screen and (width <= 970px) {
+  .about__content-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about__desc-block {
+    width: 592px;
+  }
+
+  .about__desc {
+    margin-top: 0;
+    max-width: none;
+  }
+
+  .about__front-stroke-svg {
+    display: none;
+  }
+}
+
+// Adaptation for mobile
+@media screen and (width <= 650px) {
+  .about__header {
+    margin-bottom: 30px;
+  }
+
+  .about__content-box {
+    gap: 50px;
+  }
+
+  .about__mentors {
+    order: 2;
+  }
+
+  .about__mentors-list {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .about__mentors-card::before {
+    display: none;
+  }
+
+  .about__mentors-card,
+  .about__mentors-card:first-child,
+  .about__mentors-card:last-child {
+    margin-top: 30px;
+  }
+
+  .about__desc-block {
+    align-items: center;
+    order: 1;
+    width: 100%;
+  }
+
+  .about__desc {
+    max-width: 480px;
+  }
+}
