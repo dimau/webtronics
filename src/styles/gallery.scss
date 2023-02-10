@@ -91,4 +91,8 @@
   .gallery__intro {
     margin: 0;
   }
+
+  .gallery::after {
+    left: 0;
+  }
 }
