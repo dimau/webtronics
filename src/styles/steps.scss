@@ -12,26 +12,22 @@
 
   &__content {
     display: flex;
-    gap: 266px;
-  }
-
-  &__left-part,
-  &__right-part {
-    display: flex;
     flex-direction: column;
-    gap: 180px;
-    padding: 0;
   }
 
-  &__left-part {
-    justify-content: right;
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 55px;
   }
 
-  &__right-part {
-    margin-top: 125px;
-    justify-content: left;
+  &__step:nth-child(1) {
+    margin-bottom: 124px;
   }
 
+  &__step:nth-child(2) {
+    margin-top: 124px;
+  }
 }
 
 .step {
@@ -69,25 +65,24 @@
 }
 
 /* Decoration elements - connectors to the central trunc */
-.steps__left-part .step::after,
-.steps__right-part .step::after {
+.step::after {
   content: "";
-  width: 274px;
+  width: 267px;
   height: 228px;
   position: absolute;
   top: -18px;
   @extend %background-image-helper;
 }
 
-.steps__left-part .step::after {
+.step:nth-child(1)::after {
   background-image: url("../img/steps/left-pointer.svg");
-  right: -144px;
+  right: -137px;
 }
 
-.steps__right-part .step::after {
+.step:nth-child(2)::after {
   background-image: url("../img/steps/left-pointer.svg");
   transform: rotateZ(180deg);
-  left: -144px;
+  left: -137px;
 }
 
 /* Decoration element - central trunc */
@@ -98,7 +93,7 @@
   background-image: vars.$color-linear-2;
   position: absolute;
   top: 263px;
-  left: 726px;
+  left: 719px;
 }
 
 /* Decoration element - sphere */
@@ -106,4 +101,48 @@
   @extend %background-sphere;
   top: 450px;
   left: 100px;
+}
+
+// Adaptation for tablets
+@media screen and (width <= 1219px) {
+  .steps__block {
+    flex-direction: column;
+    gap: 55px;
+    padding: 0;
+  }
+
+ .steps__step:nth-child(1),
+ .steps__step:nth-child(2) {
+    margin: 0;
+  }
+
+  .steps__content {
+    gap: 55px;
+    align-items: center;
+  }
+
+  .steps::before {
+    display: none;
+  }
+
+  .steps::after {
+    left: 0;
+  }
+
+  .step::after {
+    display: none;
+  }
+}
+
+// Adaptation for mobiles
+@media screen and (width <= 630px){
+  .step {
+    width: 100%;
+    max-width: 475px;
+  }
+
+  .step__position {
+    font-size: 4vw;
+  }
+
 }
