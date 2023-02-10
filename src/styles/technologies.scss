@@ -5,7 +5,7 @@
   margin-bottom: var(--margin-between-sections);
   position: relative;
 
-  &__inner{
+  &__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,8 +26,10 @@
 
   &__list {
     list-style: none;
-    display: flex;
-    justify-content: center;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-areas: "angular react vue js";
     gap: 25px;
   }
 
@@ -52,15 +54,55 @@
     z-index: -1;
   }
 
-  &::before {
-    @extend %background-sphere;
-    top: -250px;
-    right: 0;
+  &__item-angular {
+    grid-area: angular;
   }
 
-  &::after {
-    @extend %background-sphere;
-    top: 360px;
-    left: 120px;
+  &__item-react {
+    grid-area: react;
+  }
+
+  &__item-vue {
+    grid-area: vue;
+  }
+
+  &__item-js {
+    grid-area: js;
+  }
+
+}
+
+/* Decoration element - sphere */
+.technologies::before {
+  @extend %background-sphere;
+  top: -250px;
+  right: 0;
+}
+
+.technologies::after {
+  @extend %background-sphere;
+  top: 360px;
+  left: 120px;
+}
+
+// Adaptation for tabs
+@media screen and (width <= 920px) {
+  .technologies__list {
+    grid-template-areas: "angular react"
+                          "vue js";
+  }
+}
+
+// Adaptation for mobile
+@media screen and (width <= 480px) {
+  .technologies__list {
+    grid-template-areas: "angular"
+                         "react"
+                         "vue"
+                         "js";
+  }
+
+  .technologies::after {
+    left: 0;
   }
 }
