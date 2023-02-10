@@ -174,3 +174,9 @@
     max-width: 480px;
   }
 }
+
+@media screen and (max-width: 630px) {
+  .about__desc {
+    font-size: 14px;
+  }
+}

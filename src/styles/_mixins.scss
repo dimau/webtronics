@@ -2,7 +2,7 @@
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--text-font-size);
   line-height: 140%;
   color: #FFFFFF;
 }
@@ -25,20 +25,11 @@
 
 @mixin text-header($h: 2) {
   @if ($h == 1) {
-    font-size: 150px;
-    @media screen and (width <= 1219px) {
-      font-size: 100px;
-    }
-    @media screen and (width <= 920px) {
-      font-size: 12vw;
-    }
+    font-size: var(--h1-font-size);
   } @else if ($h == 2) {
-    font-size: 72px;
-    @media screen and (width <= 920px) {
-      font-size: 8vw;
-    }
+    font-size: var(--h2-font-size);
   } @else if ($h == 3) {
-    font-size: 32px;
+    font-size: var(--h3-font-size);
   } @else {
     font-size: 24px;
   }

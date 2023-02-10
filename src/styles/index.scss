@@ -4,8 +4,30 @@
 @use "mixins";
 
 :root {
-  --base-unit: calc(1vh + 1vw);
   --margin-between-sections: 180px;
+  --text-font-size: 16px;
+  --h1-font-size: 150px;
+  --h2-font-size: 72px;
+  --h3-font-size: 32px;
+}
+
+@media screen and (width <= 1219px) {
+  :root {
+    --h1-font-size: 100px;
+  }
+}
+
+@media screen and (width <= 920px){
+  :root {
+    --h1-font-size: 12vw;
+    --h2-font-size: 8vw;
+  }
+}
+
+@media screen and (width <= 630px){
+  :root {
+    --text-font-size: 14px;
+  }
 }
 
 html {

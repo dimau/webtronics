@@ -35,7 +35,6 @@
 
   &__header {
     @include mixins.text-header(1);
-    font-size: 150px;
     text-align: left;
   }
 
