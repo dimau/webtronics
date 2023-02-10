@@ -26,9 +26,8 @@
     border-radius: 20px;
     padding: 1px;
     background: vars.$color-gradient;
-    mask:
-            linear-gradient(#fff, #fff) content-box,
-            linear-gradient(#fff, #fff);
+    mask: linear-gradient(#fff, #fff) content-box,
+    linear-gradient(#fff, #fff);
     mask-composite: exclude;
     pointer-events: none;
   }
@@ -53,9 +52,8 @@
     border-radius: 8px;
     padding: 1px;
     background: vars.$color-gradient;
-    mask:
-            linear-gradient(#fff, #fff) content-box,
-            linear-gradient(#fff, #fff);
+    mask: linear-gradient(#fff, #fff) content-box,
+    linear-gradient(#fff, #fff);
     mask-composite: exclude;
     pointer-events: none;
   }
@@ -79,7 +77,6 @@
   }
 
   &__submit {
-    padding: 24px 32px;
     width: var(--width);
     margin-top: 8px;
   }
@@ -90,4 +87,24 @@
   @extend %background-sphere;
   top: -150px;
   right: 0;
+}
+
+/* Adaptation for mobiles */
+@media screen and (width <= 630px) {
+  .contact-us {
+    --width: 100%;
+  }
+
+  .contact-us__inner {
+    padding: 35px 25px;
+  }
+
+
+  .contact-us__input-wrapper {
+    width: 100%;
+  }
+
+  .contact-us input {
+    padding: 16px;
+  }
 }
