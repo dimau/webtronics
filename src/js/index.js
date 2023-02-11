@@ -3,6 +3,7 @@ import "../styles/index.scss";
 /* Import styles and js for accordion module */
 import "../styles/accordion.scss";
 import { Accordion } from "./accordion";
+import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 /* Import styles and js for swiper slider module */
 // import "swiper/css/bundle";
@@ -40,5 +41,20 @@ new Accordion(document.querySelector(".accordion"), {
 const menuBtn = document.querySelector(".nav__burger");
 const menuMobile = document.querySelector(".nav__list");
 menuBtn.addEventListener("click", () => {
+  // Disable page scroll when open the mobile menu
+  if (menuMobile.classList.contains("open")) {
+    enablePageScroll(menuMobile);
+  } else {
+    disablePageScroll(menuMobile);
+  }
+
+  // Add class to show the menu
   menuMobile.classList.toggle("open");
+});
+
+menuMobile.addEventListener("click", () => {
+  if (menuMobile.classList.contains("open")) {
+    enablePageScroll(menuMobile);
+    menuMobile.classList.remove("open");
+  }
 });
