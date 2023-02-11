@@ -42,7 +42,6 @@
 
   &__item {
     background: rgba(255, 255, 255, 0.05);
-    padding: 27px 70px 27px 27px;
   }
 
   // Gradient border with border radius
@@ -61,7 +60,7 @@
   &__header {
     @include mixins.text-header(4);
     background-color: transparent;
-    padding: 0;
+    padding: 27px 70px 27px 27px;
 
     &:hover {
       background-color: transparent;
@@ -77,7 +76,7 @@
   &__content {
     background-color: transparent;
     color: vars.$color-clean;
-    padding: 16px 0 0 0;
+    padding: 0 70px 27px 27px;
   }
 }
 
