@@ -58,6 +58,10 @@
   @extend %background-sphere;
   top: 450px;
   left: 50px;
+
+  @media screen and (width <= 768px) {
+    display: none;
+  }
 }
 
 // Adaptation for tablets

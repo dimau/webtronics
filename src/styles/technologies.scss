@@ -77,12 +77,20 @@
   @extend %background-sphere;
   top: -250px;
   right: 0;
+
+  @media screen and (width <= 768px) {
+    display: none;
+  }
 }
 
 .technologies::after {
   @extend %background-sphere;
   top: 360px;
   left: 120px;
+
+  @media screen and (width <= 768px) {
+    display: none;
+  }
 }
 
 // Adaptation for tabs

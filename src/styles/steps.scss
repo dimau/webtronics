@@ -13,6 +13,7 @@
   &__content {
     display: flex;
     flex-direction: column;
+    position: relative;
   }
 
   &__block {
@@ -86,14 +87,14 @@
 }
 
 /* Decoration element - central trunc */
-.steps::before {
+.steps__content::before {
   content: "";
   width: 4px;
   height: 870px;
   background-image: vars.$color-linear-2;
   position: absolute;
-  top: 263px;
-  left: 719px;
+  top: 101px;
+  left: 598px;
 }
 
 /* Decoration element - sphere */
@@ -101,6 +102,10 @@
   @extend %background-sphere;
   top: 450px;
   left: 100px;
+
+  @media screen and (width <= 768px) {
+    display: none;
+  }
 }
 
 // Adaptation for tablets
@@ -121,7 +126,7 @@
     align-items: center;
   }
 
-  .steps::before {
+  .steps__content::before {
     display: none;
   }
 
