@@ -1,0 +1,142 @@
+@use "../../app/styles/vars";
+@use "../../app/styles/mixins";
+
+.promo {
+  background-image: url("./img/bg.webp");
+  @extend %background-image-helper;
+  height: 100vh;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 380px;
+    background-image: vars.$color-linear-1;
+    z-index: 1;
+  }
+
+  &__inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+
+  &__content-block {
+    height: 400px;
+    width: 1200px;
+    position: relative;
+  }
+
+  &__header {
+    @include mixins.text-header(1);
+    text-align: left;
+  }
+
+  &__header-span1,
+  &__header-span2,
+  &__header-span3 {
+    display: block;
+  }
+
+  &__header-span2 {
+    padding-left: 312px;
+  }
+
+  &__header-span3 {
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: right;
+  }
+
+  &__subheader {
+    width: 360px;
+    position: absolute;
+    right: 0;
+    top: 110px;
+    transform: translateY(-50%);
+  }
+
+  &__button {
+    /* Position */
+    position: absolute;
+    top: calc(180px + 90px);
+    left: 0;
+    transform: translateY(-50%);
+    text-decoration: none;
+  }
+
+  // Adaptation for tablets
+  @media (width < 1220px) {
+    &__content-block {
+      height: 279px;
+      width: 880px;
+    }
+
+    &__subheader {
+      width: 340px;
+      top: 64px;
+    }
+
+    &__button {
+      top: 179px;
+    }
+  }
+
+  // Adaptation for phones
+  @media (width <= 920px) {
+
+    &__inner {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 25px;
+    }
+
+    &__content-block {
+      height: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 35px;
+    }
+
+    &__header {
+      text-align: center;
+    }
+
+    &__header-span2 {
+      padding-left: 0;
+    }
+
+    &__header-span3 {
+      font-size: 32px;
+      line-height: 1.2;
+      text-align: right;
+    }
+
+    &__subheader {
+      width: 65vw;
+      position: static;
+      transform: none;
+    }
+
+    &__button {
+      position: static;
+      transform: none;
+    }
+  }
+
+  @media screen and (width <= 630px) {
+    &__subheader {
+      font-size: 14px;
+    }
+  }
+}
+

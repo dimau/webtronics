@@ -1,0 +1,18 @@
+mixin navItem(href, text)
+    li.nav__item
+        a.nav__link(href= href)= text
+
+header.header
+    .container
+        .header__inner
+            nav.nav
+                a.header__logo-link(href="#")
+                    img.header__logo(src=require("./img/logo.svg") alt="Логотип компани Webtronics")
+                ul.nav__list
+                    +navItem("#about", "About")
+                    +navItem("#technologies", "Programs")
+                    +navItem("#steps", "Steps")
+                    +navItem("#faq", "Questions")
+                    +navItem("#contact-us", "Get in touch")
+                button.nav__burger(aria-label="show navigation menu on mobile")
+                    span.nav__burger-line

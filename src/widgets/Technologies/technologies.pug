@@ -1,0 +1,16 @@
+mixin technologieItem(uniqueClass, src, alt, title)
+    li.technologies__item(class= uniqueClass)
+        img.technologies__icon(src=require(src) alt= alt)
+        h3.technologies__item-title= title
+
+
+section#technologies.technologies
+    .container
+        .technologies__inner
+            h2.technologies__header Programming technologies
+            .technologies__subheader By the end, you’ll have the portfolio and interview skills you need to start your new career.
+            ul.technologies__list
+                +technologieItem("technologies__item-angular", "./img/angular.svg", "Icon of Angular library", "Angular")
+                +technologieItem("technologies__item-react", "./img/react.svg", "Icon of React library", "React")
+                +technologieItem("technologies__item-vue", "./img/vue.svg", "Icon of Vue library", "Vue.js")
+                +technologieItem("technologies__item-js", "./img/js.svg", "Icon of JavaScript", "JavaScript")

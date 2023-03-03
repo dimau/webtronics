@@ -1,0 +1,19 @@
+mixin step(position, title, desc)
+    .step.steps__step
+        p.step__position= position
+        h3.step__title= title
+        p.step__desc= desc
+
+section#steps.steps
+    .container
+        h2.steps__header Steps
+        .steps__content
+            .steps__block
+                +step("Step 1", "Introduction to Front-End", "Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.")
+                +step("Step 2", "Overview of Development", "Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.")
+            .steps__block
+                +step("Step 3", "Introduction to Front-End", "Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.")
+                +step("Step 4", "Overview of Development", "Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.")
+            .steps__block
+                +step("Step 5", "Introduction to Front-End", "Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.")
+                +step("Step 6", "Overview of Development", "Lorem ipsum dolor sit amet consectetur. Elit massa erat vitae non semper quis.")

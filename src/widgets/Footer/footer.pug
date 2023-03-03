@@ -1,0 +1,32 @@
+mixin menuItem(href, text)
+    li.footer__menu-item
+        a.footer__menu-link(href= href)= text
+
+mixin socialIcon(href, img, alt)
+    li.footer__social-icon
+        a.footer__social-link(href= href)
+            img(src=require(img) alt= alt)
+
+footer.footer
+    .container
+        .footer__inner
+            .footer__logo-address
+                a.footer__logo(href="#")
+                    img(src=require("../Header/img/logo.svg") alt="Webtronics logo")
+                address.footer__address Wisconsin Ave, Suite 700 Chevy Chase, Maryland 20815
+            .footer__menu-block
+                h2.footer__menu-header Company
+                ul.footer__menu
+                    +menuItem("#about", "About us")
+                    +menuItem("#steps", "Steps")
+                    +menuItem("#faq", "FAQs")
+                    +menuItem("#review", "Review")
+                    +menuItem("#gallery", "Gallery")
+            .footer__social-media-block
+                h2.footer__social-header Social media
+                ul.footer__social-icons
+                    +socialIcon("#", "./img/facebook.svg", "Facebook icon")
+                    +socialIcon("#", "./img/gitlab.svg", "Gitlab icon")
+                    +socialIcon("#", "./img/twitter.svg", "Twitter icon")
+                    +socialIcon("#", "./img/linkedin.svg", "Linkedin icon")
+

@@ -1,0 +1,16 @@
+extends ../../layouts/Main/main.layout.pug
+
+block styles
+    link(href=require('./index.scss') rel='stylesheet')
+
+block scripts
+    script(defer='defer' src=require('./index.js'))
+
+block content
+    include ../../widgets/Promo/promo
+    include ../../widgets/About/about
+    include ../../widgets/Technologies/technologies
+    include ../../widgets/Steps/steps
+    include ../../widgets/Faq/faq
+    include ../../widgets/Gallery/gallery
+    include ../../widgets/ContactUs/contactUs

@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+        meta(name="description" content="This site is just a demo of front-end dev skills of Dmitrii Ushakov")
+        title Webtronics
+
+        link(href=require('./main.layout.scss') rel='stylesheet')
+        block styles
+
+        script(defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js")
+        script(defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js")
+        script(defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js")
+        script(defer="defer" src=require("./main.layout.js"))
+        block scripts
+    body
+        include ../../widgets/Header/header
+        main.main
+            block content
+        include ../../widgets/Footer/footer

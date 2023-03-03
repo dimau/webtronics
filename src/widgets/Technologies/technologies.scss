@@ -1,0 +1,116 @@
+@use "../../app/styles/vars";
+@use "../../app/styles/mixins";
+
+.technologies {
+  margin-bottom: var(--margin-between-sections);
+  position: relative;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__header {
+    @include mixins.text-header(2);
+    margin-bottom: 60px;
+    max-width: 550px;
+  }
+
+  &__subheader {
+    @extend %text-normal;
+    max-width: 550px;
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-areas: "angular react vue js";
+    gap: 25px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 25px 10px;
+    position: relative;
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 181px;
+    height: 230px;
+    background-image: url("./img/Subtract.svg");
+    @extend %background-image-helper;
+    z-index: -1;
+  }
+
+  &__item-angular {
+    grid-area: angular;
+  }
+
+  &__item-react {
+    grid-area: react;
+  }
+
+  &__item-vue {
+    grid-area: vue;
+  }
+
+  &__item-js {
+    grid-area: js;
+  }
+
+}
+
+/* Decoration element - sphere */
+.technologies::before {
+  @extend %background-sphere;
+  top: -250px;
+  right: 0;
+
+  @media screen and (width <= 768px) {
+    display: none;
+  }
+}
+
+.technologies::after {
+  @extend %background-sphere;
+  top: 360px;
+  left: 120px;
+
+  @media screen and (width <= 768px) {
+    display: none;
+  }
+}
+
+// Adaptation for tabs
+@media screen and (width <= 920px) {
+  .technologies__list {
+    grid-template-areas: "angular react"
+                          "vue js";
+  }
+}
+
+// Adaptation for mobile
+@media screen and (width <= 480px) {
+  .technologies__list {
+    grid-template-areas: "angular"
+                         "react"
+                         "vue"
+                         "js";
+  }
+
+  .technologies::after {
+    left: 0;
+  }
+}

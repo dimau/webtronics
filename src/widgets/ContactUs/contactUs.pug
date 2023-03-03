@@ -1,0 +1,15 @@
+section#contact-us.contact-us
+    .container
+        form.contact-us__inner
+            h2.contact-us__header Contact&nbsp; us
+            p.contact-us__desc If you have any questions, please feel free to contact us
+            label.invisible(for="name-input") Enter your name
+            label.invisible(for="phone-input") Enter your phone number
+            label.invisible(for="email-input") Enter your email
+            .contact-us__input-wrapper
+                input#name-input.contact-us__name-input(type="text" placeholder="Name")
+            .contact-us__input-wrapper
+                input#phone-input.contact-us__phone-input(type="tel" placeholder="Phone")
+            .contact-us__input-wrapper
+                input#email-input.contact-us__email-input(type="email" placeholder="E-mail")
+            button.contact-us__submit.button(type="submit") Send
