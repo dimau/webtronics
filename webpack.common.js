@@ -36,7 +36,7 @@ const config = {
         use: ["css-loader", "postcss-loader", "sass-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|ico|webp)$/i,
         type: "asset/resource",
         generator: {
           filename: "assets/img/[name].[hash:8][ext]",

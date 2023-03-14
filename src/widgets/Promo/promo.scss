@@ -2,7 +2,7 @@
 @use "../../app/styles/mixins";
 
 .promo {
-  background-image: url("./img/bg.webp");
+  background-image: url("img/bg.webp");
   @extend %background-image-helper;
   height: 100vh;
   position: relative;
