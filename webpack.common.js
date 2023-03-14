@@ -64,12 +64,16 @@ const config = {
       },
     }),
 
-    // Copy robots.txt file from src to dist
+    // Copy robots.txt file and favicons files from src to dist
     new CopyWebpackPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, "src", "robots.txt"),
           to: path.resolve(__dirname, "dist", "robots.txt"),
+        },
+        {
+          from: path.resolve(__dirname, "./src/favicons/"),
+          to: path.resolve(__dirname, "dist"),
         },
       ],
     }),
